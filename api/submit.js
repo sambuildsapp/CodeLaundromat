@@ -45,7 +45,7 @@ export default async function handler(req) {
     // 2. Send Email via Resend
     const { data, error } = await resend.emails.send({
       from: "CodeLaundromat <contact@codelaundromat.com>",
-      to: ["shivamthapliyaltrust121@gmail.com"],
+      to: ["contact@codelaundromat.com"],
       subject: `New ${type || "Lead"} from CodeLaundromat`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
