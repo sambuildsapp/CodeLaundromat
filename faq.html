@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | CodeLaundromat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-bg);
+            color: #1e293b;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand-font {
+            font-family: 'Space+Grotesk', sans-serif;
+        }
+
+        .bubble-bg {
+            background: radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 210, 255, 0.05) 0%, transparent 20%);
+        }
+
+        /* Accordion transition styles */
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body class="bubble-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#top" class="flex items-center space-x-2 group transition cursor-pointer">
+                <div
+                    class="w-10 h-10 bg-[#00d2ff] rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-slate-800">Code<span
+                        class="text-[#00d2ff]">Laundromat</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html#problem" class="hover:text-[#00d2ff] transition">The AI Slop</a>
+                <a href="index.html#audit" class="hover:text-[#00d2ff] transition">Slop Quiz</a>
+                <a href="index.html#services" class="hover:text-[#00d2ff] transition">Wash Menu</a>
+                <a href="faq.html" class="text-[#00d2ff] transition font-bold">FAQ</a>
+            </div>
+            <a href="index.html#audit"
+                class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-slate-800 transition shadow-md shadow-slate-200">
+                Book an Audit
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-32 pb-12 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h1>
+            <p class="text-lg text-slate-500">Everything you need to know about our process, the AIDevFramework, and how
+                we handle your proprietary code.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="pb-24 px-6">
+        <div class="max-w-3xl mx-auto space-y-12">
+
+            <!-- Category 1 -->
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b border-slate-200 pb-2">The Core Philosophy &
+                    The AIDevFramework</h2>
+                <div class="space-y-4">
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Are you
+                                against using AI for software development?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            No, we are strong advocates for AI—but only with structured, human-led guardrails. AI is an
+                            incredible accelerant for prototyping, but unstructured prompting leads to unmaintainable
+                            code, security flaws, and circular bugs. We believe in using AI strategically, guided by
+                            senior engineers.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Do your
+                                engineers use AI when fixing our code?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            Yes, carefully and intentionally. Our core tech leadership maintains the
+                            <strong>AIDevFramework</strong>, a proprietary and continuously evolving set of rules,
+                            prompts, and strictly constrained workflows. Our senior engineers use this framework to
+                            safely refactor, write tests, and optimize your architecture. We don't use AI blindly to fix
+                            AI; we use structured machine speed guided by human expertise.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">What
+                                exactly is the AIDevFramework?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            It is our internal methodology for safely integrating AI into the software development
+                            lifecycle (SDLC). It dictates when to use AI, how to verify its output, how to manage
+                            context windows securely, and how to enforce architectural standards. It is constantly
+                            updated by our leadership to adapt to the fast-moving AI landscape.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">What do we
+                                get at the end of an engagement?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            You receive two major deliverables: First, a production-ready, highly maintainable codebase
+                            stripped of hallucinated technical debt. Second, the <strong>AIDevFramework</strong>
+                            playbook tailored for your team. You won't just get clean code; your developers will learn
+                            how to mindfully and securely use AI moving forward, ensuring they never fall back into the
+                            "80% trap."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b border-slate-200 pb-2">Security, Privacy & IP
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Do I need
+                                to give you full access to my entire proprietary repository?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            Not necessarily. We operate under strict enterprise-grade NDAs. We can work securely on
+                            isolated modules, specific branches, or via paired programming sessions. We integrate with
+                            your preferred Git provider and adapt to your internal security and compliance needs.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Will our
+                                proprietary code be used to train AI models?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            Absolutely not. As part of the <strong>AIDevFramework</strong>, we mandate strict
+                            zero-data-retention policies and securely sandbox any tooling we use. Your intellectual
+                            property remains yours and is never fed back into public models or training datasets.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">How do you
+                                handle hardcoded secrets and vulnerabilities created by the AI?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            Identifying security risks is step one of our audit. AI tools frequently hallucinate
+                            dependencies or mishandle API keys. We manually audit your environment variables, remove
+                            vulnerable or bloated packages, and implement secure secret management practices.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b border-slate-200 pb-2">The Cost of Doing it
+                    Yourself</h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Why
+                                shouldn't I just hire a full-time Senior Developer to fix this?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            Most high-tier engineers <em>hate</em> inheriting undocumented, AI-generated "spaghetti"
+                            code—it leads to rapid burnout and high turnover. Moreover, hiring takes months; we can
+                            start in days. We act as your specialized strike team: we clean the slop, establish CI/CD
+                            hygiene, and hand back a pristine codebase that your future hires will actually be excited
+                            to work on.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Why can't
+                                I just run the code through a more advanced AI model to fix the bugs?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            AI lacks systemic architectural context. Asking an AI to fix its own hallucinated logic
+                            usually results in "circular bugs"—where fixing one issue breaks two others in disparate
+                            parts of the app. Only a human engineer can understand the overarching business logic to
+                            ensure the architecture is sound, not just syntactically correct.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4 -->
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b border-slate-200 pb-2">Logistics, Team, &
+                    Assurance</h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">Who are
+                                the "Verified Humans" working on my project?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            We deploy only vetted, senior-level software engineers with proven experience in scaling
+                            production web applications. We do not outsource to junior developers. You will communicate
+                            directly with the Lead Engineer handling your codebase.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">How long
+                                does the process take?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            It depends on the scope of the technical debt. Our "Quick Wash" for critical blockers takes
+                            48-72 hours. A "Deep Clean" (architectural refactoring and test coverage) typically takes
+                            2-3 weeks.
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <button
+                            class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+                            <span class="font-semibold text-slate-900 hover:text-[#00d2ff] transition-colors">How do you
+                                ensure the code won't just break again?</span>
+                            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 bg-slate-50 text-slate-600 border-t border-slate-100">
+                            We take profound professional accountability for the code we deliver. While the initial AI
+                            prototype may have been a black box, our delivered code comes with human-written automated
+                            tests, proper architectural documentation, and a clear CI/CD pipeline. Our goal is to hand
+                            you an enterprise-grade foundation that your team can confidently build upon.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-16 text-center">
+                <a href="index.html#audit"
+                    class="inline-block bg-[#00d2ff] text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-105 transition shadow-lg shadow-blue-200">
+                    Book an Audit Today
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200 bg-white">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <span class="font-bold text-slate-800">CodeLaundromat</span>
+                <span>© 2026. All rights cleaned.</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="index.html#problem" class="hover:text-slate-800 transition">The AI Slop</a>
+                <a href="index.html#services" class="hover:text-slate-800 transition">Wash Menu</a>
+                <a href="faq.html" class="hover:text-slate-800 transition">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Accordion Script -->
+    <script>
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
