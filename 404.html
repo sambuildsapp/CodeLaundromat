@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | CodeLaundromat</title>
+    <meta name="description" content="Oops! We couldn't find that page.">
+
+    <!-- Favicons & Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="/output.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bubble-bg font-sans min-h-screen flex flex-col items-center justify-center p-6 text-center">
+
+    <div
+        class="glass-card p-12 md:p-16 rounded-3xl border border-blue-100 shadow-2xl max-w-lg w-full relative overflow-hidden">
+        <!-- Floating bubbles design -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#00d2ff]/10 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+        <div
+            class="w-20 h-20 bg-blue-50 text-[#00d2ff] rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-blue-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+
+        <h1 class="text-6xl font-bold text-slate-900 mb-4 tracking-tight">404</h1>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">This link didn't survive the wash.</h2>
+        <p class="text-slate-600 mb-10 text-lg leading-relaxed">
+            The page you're looking for doesn't exist. It was likely deprecated, removed, or scrubbed clean.
+        </p>
+
+        <a href="/"
+            class="inline-flex items-center justify-center px-8 py-4 bg-[#00d2ff] text-slate-900 rounded-xl font-bold text-lg hover:brightness-105 transition shadow-lg shadow-blue-200 whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Safety
+        </a>
+    </div>
+
+    <div class="mt-12 text-slate-500 text-sm font-medium flex items-center">
+        Code<span class="text-[#00d2ff]">Laundromat</span>
+    </div>
+
+</body>
+
+</html>
